@@ -14,7 +14,7 @@ uniqueBookNumbers.sort((a, b) => a - b);
     {
       uniqueBookNumbers.map((bookNum) => (
         <div>
-          <h1 class="text-3xl font-bold mb-5">
+          <h1 class="mb-5 text-3xl font-bold">
             Book {bookNum}: {SUBTITLES[bookNum] || "Unknown"}
           </h1>
           <div class="flex">
@@ -22,9 +22,12 @@ uniqueBookNumbers.sort((a, b) => a - b);
               .filter((chapter) => chapter.data.book === bookNum)
               .map((chapter) => (
                 <a href={`/book/${chapter.id}`}>
-                  <div class="card bg-neutral text-neutral-content max-w-96 shadow-xl">
+                  <div class="card max-w-96 bg-neutral text-neutral-content shadow-xl">
                     <figure>
-                      <img src={`/assets/illustrations/${chapter.data.art}`} alt="" />
+                      <img
+                        src={`/assets/illustrations/${chapter.data.art}`}
+                        alt=""
+                      />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">{chapter.data.title}</h2>
