@@ -1,0 +1,59 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+type Props = CollectionEntry<"book">["data"];
+
+const { title, pubDate, book, chapter } = Astro.props;
+
+const allChapters = await getCollection("book");
+const sortedAllChapters = allChapters.sort((a, b) => {
+  //  Sort by book, then chapter
+  if (a.data.book !== b.data.book) {
+    return a.data.book - b.data.book;
+  }
+  return a.data.chapter - b.data.chapter;
+});
+// Get array (collection) index for current chapter
+const currentPage = sortedAllChapters.findIndex(
+  (entry) => entry.data.book === book && entry.data.chapter === chapter,
+);
+const nextPage = sortedAllChapters[currentPage + 1];
+const prevPage = sortedAllChapters[currentPage - 1];
+---
+
+<BaseLayout>
+  <main class="m-5 flex flex-col items-center">
+    <article class="prose font-serif text-xl">
+      <h1 class="!mb-0 text-center">{title}</h1>
+      <hr class="!my-5" />
+      <slot />
+    </article>
+    <div class="flex gap-5">
+      {
+        currentPage - 1 != -1 &&
+        sortedAllChapters[currentPage - 1] !== undefined ? (
+          <a
+            role="button"
+            class="btn btn-primary"
+            href={`/book/${prevPage.id}`}
+          >
+            Previous Chapter
+          </a>
+        ) : null
+      }
+      {
+        sortedAllChapters[currentPage + 1] !== undefined ? (
+          <a
+            role="button"
+            class="btn btn-primary"
+            href={`/book/${nextPage.id}`}
+          >
+            Next Chapter
+          </a>
+        ) : null
+      }
+    </div>
+  </main>
+</BaseLayout>
