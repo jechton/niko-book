@@ -3,7 +3,7 @@ title: "Prologue"
 pubDate: 2025-01-12
 book: 1
 chapter: 0
-art: "prologue_illustration.jpg"
+art: "prologue.jpg"
 ---
 
 Charlie McKinnon had been aware of Amy Puck's eccentricities before they ever began to fall in love. The two of them had met in college, not through any class, but through a sort of on-campus support group for first-generation students. While Amy was the first in her family to attend school because her father worked a blue-collar job and her mother was an immigrant, Charlie was the first to attend because her family were a bunch of bullshit backwoods-ass hicks.
@@ -26,7 +26,7 @@ She'd made her way out onto the porch, looking down the front steps, and at the 
 
 ---
 
-![](/assets/prologue_illustration.jpg)
+![](/assets/illustrations/prologue.jpg)
 
 Charlie McKinnon was not a sculptor, but she had butchered animals after her father brought them home in his big arms and dumped them onto a plastic folding table in the garage. She had read the note in the basket, written in flowery, looping handwritten ink. _'Amy. I send in this basket all of your brother's love. His children, Aindréas and Gwendolynne.'_ The ink still smudged when she ran her thumb across it, and smelled like blackberries and honey. The mass of flesh had been swiftly moved, then, basket and all, to the garage, where she knelt over it now with a hunting knife.
 
