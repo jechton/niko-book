@@ -28,6 +28,18 @@ export default {
   },
   plugins: [daisyui, typography],
   daisyui: {
-    themes: ["forest"],
+    themes: [
+      {
+        nikotheme: {
+          primary: "#1eb854",
+          "primary-content": "#000000",
+          secondary: "#1DB88E",
+          accent: "#1DB8AB",
+          neutral: "#19362D",
+          "base-100": "#f5edca",
+          "--rounded-btn": "1.9rem",
+        },
+      },
+    ],
   },
 };
