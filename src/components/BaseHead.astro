@@ -8,6 +8,8 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description } = Astro.props;
+
+import { ClientRouter } from "astro:transitions";
 ---
 
 {/* Global Metadata */}
@@ -49,3 +51,5 @@ const { title, description } = Astro.props;
   is:inline
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8627998607276763"
   crossorigin="anonymous"></script>
+
+<ClientRouter />
