@@ -1,5 +1,6 @@
 ---
 import { SUBTITLES } from "$consts";
+import Card from "@components/Card.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 const allChapters = await getCollection("book");
@@ -21,19 +22,12 @@ uniqueBookNumbers.sort((a, b) => a - b);
             {allChapters
               .filter((chapter) => chapter.data.book === bookNum)
               .map((chapter) => (
-                <a href={`/book/${chapter.id}`}>
-                  <div class="card max-w-96 bg-neutral text-neutral-content shadow-xl">
-                    <figure>
-                      <img
-                        src={`/assets/illustrations/${chapter.data.art}`}
-                        alt=""
-                      />
-                    </figure>
-                    <div class="card-body">
-                      <h2 class="card-title">{chapter.data.title}</h2>
-                    </div>
-                  </div>
-                </a>
+                <Card
+                  imagePath={`/src/assets/illustrations/${chapter.data.art}`}
+                  altText=""
+                  link={`/book/${chapter.id}`}
+                  title={chapter.data.title}
+                />
               ))}
           </div>
         </div>

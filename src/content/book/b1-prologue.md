@@ -26,7 +26,7 @@ She'd made her way out onto the porch, looking down the front steps, and at the 
 
 ---
 
-![](/assets/illustrations/prologue.jpg)
+![](@illustrations/prologue.jpg)
 
 Charlie McKinnon was not a sculptor, but she had butchered animals after her father brought them home in his big arms and dumped them onto a plastic folding table in the garage. She had read the note in the basket, written in flowery, looping handwritten ink. _'Amy. I send in this basket all of your brother's love. His children, Aindréas and Gwendolynne.'_ The ink still smudged when she ran her thumb across it, and smelled like blackberries and honey. The mass of flesh had been swiftly moved, then, basket and all, to the garage, where she knelt over it now with a hunting knife.
 
