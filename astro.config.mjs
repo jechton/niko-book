@@ -9,7 +9,7 @@ import icon from "astro-icon";
 
 import partytown from "@astrojs/partytown";
 
-import vercelStatic from "@astrojs/vercel/static";
+import vercelStatic from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
