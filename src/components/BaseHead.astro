@@ -5,6 +5,16 @@ interface Props {
   image?: string;
 }
 
+import faviconSrc from "@assets/favicon.png";
+import { getImage } from "astro:assets";
+
+const appleTouchIcon = await getImage({
+  src: faviconSrc,
+  width: 180,
+  height: 180,
+  format: "png",
+});
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description } = Astro.props;
@@ -15,7 +25,9 @@ import { ClientRouter } from "astro:transitions";
 {/* Global Metadata */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/gif" href="/favicon.gif" />
+<link rel="icon" href="/favicon.ico" sizes="" 32x32 />
+<link rel="apple-touch-icon" href={appleTouchIcon.src} />
+<link rel="manifest" href="/manifest.json" />
 <meta name="generator" content={Astro.generator} />
 
 {/* Font preloads */}
