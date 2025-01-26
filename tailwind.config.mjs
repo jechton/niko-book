@@ -31,10 +31,10 @@ export default {
     themes: [
       {
         nikotheme: {
-          primary: "#1eb854",
+          primary: "#e7d37e",
           "primary-content": "#000000",
-          secondary: "#1DB88E",
-          accent: "#1DB8AB",
+          secondary: "#b49718",
+          accent: "#4d0505",
           neutral: "#19362D",
           "base-100": "#f5edca",
           "--rounded-btn": "1.9rem",
