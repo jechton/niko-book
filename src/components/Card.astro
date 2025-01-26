@@ -7,9 +7,10 @@ interface Props {
   altText: string;
   link: string;
   title: string;
+  subtitle: string;
 }
 
-const { imagePath, altText, link, title } = Astro.props;
+const { imagePath, altText, link, title, subtitle } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}",
 );
@@ -19,6 +20,8 @@ if (!images[imagePath])
   throw new Error(
     `"${imagePath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`,
   );
+
+const htmlMDash = " &mdash; ";
 ---
 
 <a href={`${link}`}>
@@ -27,7 +30,9 @@ if (!images[imagePath])
       <Image src={images[imagePath]()} alt={altText} loading="eager" />
     </figure>
     <div class="card-body">
-      <h2 class="card-title">{title}</h2>
+      <h2 class="card-title">
+        {title}{subtitle && <Fragment set:html={htmlMDash} />}{subtitle}
+      </h2>
     </div>
   </div>
 </a>

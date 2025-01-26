@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 type Props = CollectionEntry<"book">["data"];
 
-const { title, pubDate, book, chapter } = Astro.props;
+const { title, subtitle, pubDate, book, chapter } = Astro.props;
 
 const allChapters = await getCollection("book");
 const sortedAllChapters = allChapters.sort((a, b) => {
@@ -27,6 +27,7 @@ const prevPage = sortedAllChapters[currentPage - 1];
   <main class="m-5 flex flex-col items-center">
     <article class="prose font-serif text-xl">
       <h1 class="!mb-0 text-center">{title}</h1>
+      {subtitle && <h2 class="mb-0 mt-2 text-center">{subtitle}</h2>}
       <hr class="!my-5" />
       <slot />
     </article>

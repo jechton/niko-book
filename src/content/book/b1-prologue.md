@@ -1,5 +1,6 @@
 ---
 title: "Prologue"
+subtitle: ""
 pubDate: 2025-01-12
 book: 1
 chapter: 0
