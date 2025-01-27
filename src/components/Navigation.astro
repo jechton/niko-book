@@ -8,6 +8,8 @@ allChapters.sort((a, b) => a.data.chapter - b.data.chapter);
 const bookNumbers = allChapters.map((chapter) => chapter.data.book);
 const uniqueBookNumbers = [...new Set(bookNumbers)];
 uniqueBookNumbers.sort((a, b) => a - b);
+const { title } = Astro.props;
+const htmlMDash = " &mdash; ";
 ---
 
 <div class="drawer lg:drawer-open">
@@ -23,7 +25,9 @@ uniqueBookNumbers.sort((a, b) => a - b);
           />
         </label>
       </div>
-      <a href="/" class="mx-2 flex-1 px-2">{SITE_TITLE}</a>
+      <a href="/" class="mx-2 flex-1 px-2"
+        >{SITE_TITLE}{title && <Fragment set:html={htmlMDash} />}{title}</a
+      >
     </div>
     <div class="flex min-h-[calc(100lvh-4rem)] flex-col justify-between">
       <slot />

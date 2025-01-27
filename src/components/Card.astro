@@ -15,7 +15,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}",
 );
 
-console.log(images);
 if (!images[imagePath])
   throw new Error(
     `"${imagePath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`,

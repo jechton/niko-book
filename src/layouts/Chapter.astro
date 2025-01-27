@@ -23,11 +23,11 @@ const nextPage = sortedAllChapters[currentPage + 1];
 const prevPage = sortedAllChapters[currentPage - 1];
 ---
 
-<BaseLayout>
+<BaseLayout title={title}>
   <main class="m-5 flex flex-col items-center">
     <article class="prose font-serif text-xl">
       <h1 class="!mb-0 text-center">{title}</h1>
-      {subtitle && <h2 class="mb-0 mt-2 text-center">{subtitle}</h2>}
+      {subtitle && <h2 class="mt-2 mb-0 text-center">{subtitle}</h2>}
       <hr class="!my-5" />
       <slot />
     </article>
