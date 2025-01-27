@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 type Props = CollectionEntry<"book">["data"];
 
-const { title, subtitle, pubDate, book, chapter } = Astro.props;
+const { title, subtitle, book, chapter } = Astro.props;
 
 const allChapters = await getCollection("book");
 const sortedAllChapters = allChapters.sort((a, b) => {

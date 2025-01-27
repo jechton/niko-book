@@ -1,0 +1,28 @@
+---
+import CourtIcon from "@components/CourtIcon.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const courts = await getCollection("courts");
+---
+
+<BaseLayout title="Courts">
+  <main class="m-5">
+    <ul class="flex flex-wrap gap-5">
+      {
+        courts
+          .sort((a, b) => a.data.order - b.data.order)
+          .map((court, index) => (
+            <CourtIcon
+              zIndex={courts.length - index}
+              imagePath={`/src/assets/icons/${court.id}.png`}
+              altText={`Icon for court of ${court.id.charAt(0).toUpperCase() + court.id.slice(1)}`}
+              tooltip={`${court.id.charAt(0).toUpperCase() + court.id.slice(1)} — ${court.data.description}`}
+              color={court.data.color}
+              link={`/wiki/world/courts/${court.id}`}
+            />
+          ))
+      }
+    </ul>
+  </main>
+</BaseLayout>

@@ -8,12 +8,23 @@ const book = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
-    // Transform string to Date object
-    pubDate: z.coerce.date(),
     book: z.number(),
     chapter: z.number(),
     art: z.string(),
   }),
 });
 
-export const collections = { book };
+const courts = defineCollection({
+  // Load Markdown and MDX files in the `src/content/wiki/world/courts/` directory.
+  loader: glob({
+    base: "./src/content/wiki/world/courts",
+    pattern: "**/*.{md,mdx}",
+  }),
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    description: z.string(),
+    color: z.string(),
+    order: z.number(),
+  }),
+});
+export const collections = { book, courts };

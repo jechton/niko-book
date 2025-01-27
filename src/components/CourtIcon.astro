@@ -1,0 +1,44 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+interface Props {
+  imagePath: string;
+  altText: string;
+  tooltip: string;
+  color: string;
+  link: string;
+  zIndex: number;
+}
+
+const { imagePath, altText, tooltip, color, link, zIndex } = Astro.props;
+const rgb = color
+  .slice(1)
+  .match(/.{2}/g)
+  .map((x) => parseInt(x, 16));
+const luminance = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+const fontColor = luminance > 110 ? "--color-base-content" : null;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.{jpeg,jpg,png,gif}",
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`,
+  );
+---
+
+<div
+  class="tooltip tooltip-bottom max-w-2xs transition duration-300 hover:scale-105"
+  data-tip={tooltip}
+  style={fontColor
+    ? `--tt-bg: ${color}; --color-neutral-content: var(${fontColor}); z-index: ${zIndex};`
+    : `--tt-bg: ${color}; z-index: ${zIndex};`}
+>
+  <!-- <a href={link}> -->
+  <Image
+    class="rounded"
+    src={images[imagePath]()}
+    alt={altText}
+    loading="eager"
+  />
+  <!-- </a> -->
+</div>

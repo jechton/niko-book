@@ -2,7 +2,6 @@
 import { SITE_TITLE } from "$consts";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-const pathname = new URL(Astro.request.url).pathname.slice(1);
 const allChapters = await getCollection("book");
 allChapters.sort((a, b) => a.data.chapter - b.data.chapter);
 const bookNumbers = allChapters.map((chapter) => chapter.data.book);
