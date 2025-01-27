@@ -18,7 +18,7 @@ uniqueBookNumbers.sort((a, b) => a - b);
           <h1 class="mb-5 text-3xl font-bold">
             Book {bookNum} &mdash; {SUBTITLES[bookNum] || "Unknown"}
           </h1>
-          <div class="flex gap-5">
+          <div class="flex flex-wrap gap-5">
             {allChapters
               .filter((chapter) => chapter.data.book === bookNum)
               .map((chapter) => (

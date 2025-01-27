@@ -1,9 +1,8 @@
 // @ts-check
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
-import tailwind from "@astrojs/tailwind";
 
 import icon from "astro-icon";
 
@@ -13,8 +12,11 @@ import vercelStatic from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   site: "https://twinkings.fun",
-  integrations: [mdx(), sitemap(), tailwind(), icon(), partytown()],
+  integrations: [mdx(), sitemap(), icon(), partytown()],
   output: "static",
   adapter: vercelStatic({ imageService: true }),
 });
