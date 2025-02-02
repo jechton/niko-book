@@ -7,10 +7,9 @@ interface Props {
   tooltip: string;
   color: string;
   link: string;
-  zIndex: number;
 }
 
-const { imagePath, altText, tooltip, color, link, zIndex } = Astro.props;
+const { imagePath, altText, tooltip, color, link } = Astro.props;
 const rgb = color
   .slice(1)
   .match(/.{2}/g)
@@ -27,11 +26,11 @@ if (!images[imagePath])
 ---
 
 <div
-  class="tooltip tooltip-bottom max-w-2xs transition duration-300 hover:scale-105"
+  class="tooltip tooltip-bottom max-w-screen transition duration-300 hover:z-30 hover:scale-105 sm:max-w-2xs"
   data-tip={tooltip}
   style={fontColor
-    ? `--tt-bg: ${color}; --color-neutral-content: var(${fontColor}); z-index: ${zIndex};`
-    : `--tt-bg: ${color}; z-index: ${zIndex};`}
+    ? `--tt-bg: ${color}; --color-neutral-content: var(${fontColor});`
+    : `--tt-bg: ${color};`}
 >
   <!-- <a href={link}> -->
   <Image
