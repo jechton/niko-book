@@ -18,5 +18,10 @@ export default defineConfig({
   site: "https://twinkings.fun",
   integrations: [mdx(), sitemap(), icon(), partytown()],
   output: "static",
-  adapter: vercelStatic({ imageService: true }),
+  adapter: vercelStatic({
+    webAnalytics: {
+      enabled: true,
+    },
+    imageService: true,
+  }),
 });
