@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-html",
+    "stylelint-config-tailwindcss"
+  ],
+  "rules": {},
+  "ignoreFiles": ["**/*.{md,json,mjs,js,yaml,ts}", "./src/assets/**/*"]
+}
