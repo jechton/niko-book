@@ -40,9 +40,10 @@
 }
 
 @theme {
-  --font-sans: "Libre Franklin", "Bahnschrift", "DIN Alternate",
-    "Franklin Gothic Medium", "Nimbus Sans Narrow", "sans-serif-condensed",
-    sans-serif;
-  --font-serif: "EB Garamond", "Superclarendon", "Bookman Old Style",
-    "URW Bookman", "URW Bookman L", "Georgia Pro", "Georgia", serif;
+  --font-sans:
+    "Libre Franklin", "Bahnschrift", "DIN Alternate", "Franklin Gothic Medium",
+    "Nimbus Sans Narrow", "sans-serif-condensed", sans-serif;
+  --font-serif:
+    "EB Garamond", "Superclarendon", "Bookman Old Style", "URW Bookman",
+    "URW Bookman L", "Georgia Pro", "Georgia", serif;
 }

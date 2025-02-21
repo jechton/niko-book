@@ -13,9 +13,15 @@
     "prepare": "node .husky/install.mjs"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
-    "*.{js,mjs,cjs,ts,tsx,astro}": "eslint --fix",
-    "*.css": "stylelint -f verbose"
+    "!(*.js|*.mjs|*.cjs|*.ts|*.tsx|*.astro|*.css)": "prettier --ignore-unknown --write",
+    "*.{js,mjs,cjs,ts,tsx,astro}": [
+      "eslint --fix",
+      "prettier --ignore-unknown --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --ignore-unknown --write"
+    ]
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.8",
