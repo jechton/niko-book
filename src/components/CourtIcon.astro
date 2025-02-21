@@ -6,10 +6,9 @@ interface Props {
   altText: string;
   tooltip: string;
   color: string;
-  link: string;
 }
 
-const { imagePath, altText, tooltip, color, link } = Astro.props;
+const { imagePath, altText, tooltip, color } = Astro.props;
 const rgb = color
   .slice(1)
   .match(/.{2}/g)
@@ -32,12 +31,10 @@ if (!images[imagePath])
     ? `--tt-bg: ${color}; --color-neutral-content: var(${fontColor});`
     : `--tt-bg: ${color};`}
 >
-  <!-- <a href={link}> -->
   <Image
     class="rounded"
     src={images[imagePath]()}
     alt={altText}
     loading="eager"
   />
-  <!-- </a> -->
 </div>
