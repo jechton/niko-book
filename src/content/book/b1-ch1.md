@@ -1,7 +1,7 @@
 ---
 title: "Chapter One"
 subtitle: "My Sincere Solace"
-pubDate: 2025-01-12
+pubDate: 2025-01-25
 book: 1
 chapter: 1
 art: "b1ch1.jpg"
