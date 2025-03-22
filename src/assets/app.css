@@ -40,10 +40,16 @@
 }
 
 @theme {
-  --font-sans:
-    "Libre Franklin", "Bahnschrift", "DIN Alternate", "Franklin Gothic Medium",
-    "Nimbus Sans Narrow", "sans-serif-condensed", sans-serif;
-  --font-serif:
-    "EB Garamond", "Superclarendon", "Bookman Old Style", "URW Bookman",
-    "URW Bookman L", "Georgia Pro", "Georgia", serif;
+  --font-sans: "Libre Franklin", "Bahnschrift", "DIN Alternate",
+    "Franklin Gothic Medium", "Nimbus Sans Narrow", "sans-serif-condensed",
+    sans-serif;
+  --font-serif: "EB Garamond", "Superclarendon", "Bookman Old Style",
+    "URW Bookman", "URW Bookman L", "Georgia Pro", "Georgia", serif;
+}
+
+@layer base {
+  abbr:hover:before {
+    content: attr(title);
+    @apply bg-secondary text-secondary-content absolute -mt-8 rounded px-2.5 py-1;
+  }
 }
