@@ -1,0 +1,21 @@
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      glob: "*.{js,mjs,cjs,ts,tsx,astro}"
+      run: pnpm exec eslint --fix {staged_files}
+      stage_fixed: true
+
+    stylelint:
+      glob: "*.css"
+      run: pnpm exec stylelint --fix {staged_files}
+      stage_fixed: true
+
+    prettier:
+      run: pnpm exec prettier --ignore-unknown --write {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
