@@ -22,6 +22,7 @@
 		"astro-icon": "^1.1.5",
 		"astro-webmanifest": "^1.0.0",
 		"daisyui": "5.0.0-beta.2",
+		"date-fns": "^4.1.0",
 		"sharp": "^0.33.5",
 		"sharp-ico": "^0.1.5",
 		"tailwindcss": "^4.2.1"

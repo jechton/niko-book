@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 type Props = CollectionEntry<"book">["data"];
 
@@ -9,15 +9,15 @@ const { title, subtitle, book, chapter } = Astro.props;
 
 const allChapters = await getCollection("book");
 const sortedAllChapters = allChapters.sort((a, b) => {
-  //  Sort by book, then chapter
-  if (a.data.book !== b.data.book) {
-    return a.data.book - b.data.book;
-  }
-  return a.data.chapter - b.data.chapter;
+	//  Sort by book, then chapter
+	if (a.data.book !== b.data.book) {
+		return a.data.book - b.data.book;
+	}
+	return a.data.chapter - b.data.chapter;
 });
 // Get array (collection) index for current chapter
 const currentPage = sortedAllChapters.findIndex(
-  (entry) => entry.data.book === book && entry.data.chapter === chapter,
+	(entry) => entry.data.book === book && entry.data.chapter === chapter,
 );
 const nextPage = sortedAllChapters[currentPage + 1];
 const prevPage = sortedAllChapters[currentPage - 1];
@@ -26,9 +26,9 @@ const prevPage = sortedAllChapters[currentPage - 1];
 <BaseLayout title={title}>
   <main class="m-5 flex flex-col items-center gap-5">
     <article class="prose font-serif text-xl">
-      <h1 class="!mb-0 text-center">{title}</h1>
+      <h1 class="mb-0! text-center">{title}</h1>
       {subtitle && <h2 class="mt-2 mb-0 text-center">{subtitle}</h2>}
-      <hr class="!my-5" />
+      <hr class="my-5!" />
       <slot />
     </article>
     <div class="flex gap-5">

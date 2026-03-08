@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About the Author">
+  <main class="m-5 font-serif text-lg prose mx-auto">
+    <p>My name is <span id="author-name"></span>, I'm <span id="author-age"></span>, and I'm hedonistic garbage.</p>
+    <p>I have always borne a love for the mystical, the unseen, and the unimagined. It only made sense that on my quest to find the magic creeping through the cracks in our world, I'd land face-first in a world full of not just rules and morals, but people with the power to shape them (The Real World.)</p>
+    <p>When I began to form my own perspective, as informed by the beautiful and horrible things I've seen and felt and known, I began to understand what parts of the stories I loved so much as a kid <span class="italic">could</span> have been. I began to tell my own stories. I was too young, unprepared to discuss or articulate the sorts of ideas I was trying to express, and found myself frustrated at my own lack of empathy and understanding.</p>
+ 	  <p>I can't show people the bones that buzz under my meat with the energy of a thousand neon signs, and I certainly can't figure out the words to communicate who or what I am to anybody else.</p>
+ 	  <p>So instead, I write.</p>
+	  <p>I have been haunted by the stories I want to tell, but I finally have the words to tell them.</p>
+    <p>I hope you enjoy the glory, glamour, glitter, and gore. I hope you understand.</p>
+  </main>
+</BaseLayout>
+
+<script>
+  import { site } from "$consts";
+  import { differenceInYears } from "date-fns";
+
+  const updateAuthorInfo = () => {
+    const today = new Date();
+    const birthDate = new Date("04/13/2002");
+    const age = differenceInYears(today, birthDate);
+
+    const nameElement = document.getElementById("author-name");
+    const ageElement = document.getElementById("author-age");
+
+    if (nameElement && ageElement) {
+      nameElement.textContent = site.owner;
+      ageElement.textContent = age.toString();
+    }
+  };
+
+  document.addEventListener("astro:page-load", updateAuthorInfo);
+</script>
