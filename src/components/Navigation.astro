@@ -3,7 +3,9 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 import { site } from "$consts";
 
-const allChapters: CollectionEntry<"book">[] = await getCollection("book");
+const allEntries: CollectionEntry<"book">[] = await getCollection("book");
+const bookMetas = allEntries.filter((entry) => entry.id.endsWith("_meta"));
+const allChapters = allEntries.filter((entry) => !entry.id.endsWith("_meta"));
 allChapters.sort((a, b) => a.data.chapter - b.data.chapter);
 
 const bookNumbers: number[] = allChapters.map((chapter) => chapter.data.book);
@@ -46,24 +48,33 @@ const htmlMDash = " &mdash; ";
           <summary>Books</summary>
           <ul>
             {
-              uniqueBookNumbers.map((bookNum) => (
-                <li>
-                  <details open>
-                    <summary>Book {bookNum}</summary>
-                    <ul>
-                      {allChapters
-                        .filter((chapter) => chapter.data.book === bookNum)
-                        .map((chapter) => (
-                          <li>
-                            <a href={`/book/${chapter.id}`}>
-                              {chapter.data.title}
-                            </a>
-                          </li>
-                        ))}
-                    </ul>
-                  </details>
-                </li>
-              ))
+              uniqueBookNumbers.map((bookNum) => {
+                const meta = bookMetas.find((m) => m.data.book === bookNum);
+                return (
+                  <li>
+                    <details open>
+                      <summary>
+                        Book {bookNum}
+                        {meta?.data.title && (
+                          <Fragment set:html={htmlMDash} />
+                        )}
+                        {meta?.data.title}
+                      </summary>
+                      <ul>
+                        {allChapters
+                          .filter((chapter) => chapter.data.book === bookNum)
+                          .map((chapter) => (
+                            <li>
+                              <a href={`/book/${chapter.id}`}>
+                                {chapter.data.title}
+                              </a>
+                            </li>
+                          ))}
+                      </ul>
+                    </details>
+                  </li>
+                );
+              })
             }
           </ul>
         </details>

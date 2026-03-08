@@ -2,8 +2,6 @@
 title: "Chapter Two"
 subtitle: "Errant Imps"
 pubDate: 2025-03-22
-book: 1
-chapter: 2
 art: "b1ch2.jpg"
 ---
 

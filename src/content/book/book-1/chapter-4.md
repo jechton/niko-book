@@ -2,8 +2,6 @@
 title: "Chapter Four"
 subtitle: "Treachery"
 pubDate: 2025-09-04
-book: 1
-chapter: 4
 art: "b1ch4.jpg"
 ---
 

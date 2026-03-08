@@ -2,8 +2,6 @@
 title: "Chapter Three"
 subtitle: "Peanut Butter and Jelly"
 pubDate: 2025-06-22
-book: 1
-chapter: 3
 art: "b1ch3.jpg"
 ---
 
