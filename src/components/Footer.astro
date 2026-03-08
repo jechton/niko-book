@@ -1,12 +1,13 @@
 ---
 const today = new Date();
-import { SITE_OWNER } from "$consts";
+
 import { Icon } from "astro-icon/components";
+import { site } from "$consts";
 ---
 
 <footer class="p-2 text-center">
   &copy; {today.getFullYear()}
-  {SITE_OWNER}. All rights reserved.
+  {site.owner}. All rights reserved.
   <div class="mt-2 flex justify-center gap-2">
     <a href="https://kebbuck.tumblr.com" target="_blank">
       <span class="sr-only">Find me on Tumblr</span>

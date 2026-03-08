@@ -1,12 +1,15 @@
 ---
-import { SITE_TITLE } from "$consts";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
-const allChapters = await getCollection("book");
+import { site } from "$consts";
+
+const allChapters: CollectionEntry<"book">[] = await getCollection("book");
 allChapters.sort((a, b) => a.data.chapter - b.data.chapter);
-const bookNumbers = allChapters.map((chapter) => chapter.data.book);
+
+const bookNumbers: number[] = allChapters.map((chapter) => chapter.data.book);
 const uniqueBookNumbers = [...new Set(bookNumbers)];
 uniqueBookNumbers.sort((a, b) => a - b);
+
 const { title } = Astro.props;
 const htmlMDash = " &mdash; ";
 ---
@@ -25,7 +28,7 @@ const htmlMDash = " &mdash; ";
         </label>
       </div>
       <a href="/" class="mx-2 flex-1 px-2"
-        >{SITE_TITLE}{title && <Fragment set:html={htmlMDash} />}{title}</a
+        >{site.title}{title && <Fragment set:html={htmlMDash} />}{title}</a
       >
     </div>
     <div class="flex min-h-[calc(100lvh-4rem)] flex-col justify-between">
