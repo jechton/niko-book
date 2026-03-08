@@ -1,18 +1,7 @@
 pre-commit:
-  parallel: true
   commands:
-    eslint:
-      glob: "*.{js,mjs,cjs,ts,tsx,astro}"
-      run: pnpm exec eslint --fix {staged_files}
-      stage_fixed: true
-
-    stylelint:
-      glob: "*.css"
-      run: pnpm exec stylelint --fix {staged_files}
-      stage_fixed: true
-
-    prettier:
-      run: pnpm exec prettier --ignore-unknown --write {staged_files}
+    biome-check:
+      run: pnpm biome check --write {staged_files} --no-errors-on-unmatched --files-ignore-unknown=true --colors=off
       stage_fixed: true
 
 commit-msg:
