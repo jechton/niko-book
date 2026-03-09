@@ -45,8 +45,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       daisyui:
-        specifier: 5.0.0-beta.2
-        version: 5.0.0-beta.2
+        specifier: 5.5.19
+        version: 5.5.19
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1687,8 +1687,8 @@ packages:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
-  daisyui@5.0.0-beta.2:
-    resolution: {integrity: sha512-H1gXtcQhjcKze3UBq23dJUyKYIxHrVIKb6XtDfnSh6Ft4d0BMfPOwuvzIsuEe5PkbBm9kZH0ny+aQqiDosqpPQ==}
+  daisyui@5.5.19:
+    resolution: {integrity: sha512-pbFAkl1VCEh/MPCeclKL61I/MqRIFFhNU7yiXoDDRapXN4/qNCoMxeCCswyxEEhqL5eiTTfwHvucFtOE71C9sA==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -4967,7 +4967,7 @@ snapshots:
     dependencies:
       css-tree: 2.2.1
 
-  daisyui@5.0.0-beta.2: {}
+  daisyui@5.5.19: {}
 
   dargs@8.1.0: {}
 
