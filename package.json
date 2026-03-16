@@ -23,7 +23,7 @@
 		"astro-webmanifest": "^1.0.0",
 		"daisyui": "5.5.19",
 		"date-fns": "^4.1.0",
-		"sharp": "^0.33.5",
+		"sharp": "^0.34.5",
 		"sharp-ico": "^0.1.5",
 		"tailwindcss": "^4.2.1"
 	},
