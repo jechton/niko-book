@@ -1,6 +1,14 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:recommended",
+		":configMigration",
+		"abandonments:recommended",
+		"security:minimumReleaseAgeNpm",
+		":maintainLockFilesWeekly",
+		"customManagers:biomeVersions",
+		":automergeMinor",
+		":automergeBranch",
+		":automergeRequireAllStatusChecks"
+	]
 }
