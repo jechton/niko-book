@@ -49,7 +49,7 @@ importers:
         version: 5.5.20
       date-fns:
         specifier: ^4.1.0
-        version: 4.1.0
+        version: 4.4.0
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -1454,8 +1454,8 @@ packages:
   daisyui@5.5.20:
     resolution: {integrity: sha512-HemJcjl0Gk9rQ8BcgofN6p+EURrqftQG9wK1Hkxs98i49xe68+QxpNvry+PyxwkIUgrbMpNmZ5ZWjmtffAjfhQ==}
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -4722,7 +4722,7 @@ snapshots:
 
   daisyui@5.5.20: {}
 
-  date-fns@4.1.0: {}
+  date-fns@4.4.0: {}
 
   debug@4.4.0:
     dependencies:
