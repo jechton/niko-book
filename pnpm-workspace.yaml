@@ -2,3 +2,10 @@ allowBuilds:
   esbuild: true
   lefthook: true
   sharp: true
+supportedArchitectures:
+  os:
+    - current
+    - linux
+  cpu:
+    - current
+    - x64
