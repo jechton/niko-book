@@ -45,8 +45,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       daisyui:
-        specifier: 5.7.16
-        version: 5.7.16
+        specifier: 5.7.17
+        version: 5.7.17
       date-fns:
         specifier: ^4.1.0
         version: 4.4.0
@@ -1564,8 +1564,8 @@ packages:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
-  daisyui@5.7.16:
-    resolution: {integrity: sha512-V9CJxvrWIXTDuP/0tpijjWaKaKJNYo2IrULJfTWs3/DjW9rPqswk1n8NCLQRLrTutmlG2Ech7nkJDpCnF+6Dzw==}
+  daisyui@5.7.17:
+    resolution: {integrity: sha512-w5U5FdL9hH4/zh8eLXytWQt3c0DgHS1WDw+1yuQykT8nSIE9Vc5wkJVeDymD1JlRDLANDawvN4iIGVaxgV6Cjw==}
 
   date-fns@4.4.0:
     resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
@@ -4384,7 +4384,7 @@ snapshots:
     dependencies:
       css-tree: 2.2.1
 
-  daisyui@5.7.16: {}
+  daisyui@5.7.17: {}
 
   date-fns@4.4.0: {}
 
