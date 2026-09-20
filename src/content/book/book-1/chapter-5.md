@@ -1,5 +1,5 @@
 ---
-title: "Chapter 5"
+title: "Chapter Five"
 subtitle: "Truesight"
 pubDate: 2026-06-25
 art: "b1ch5.jpg"
