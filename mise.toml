@@ -1,5 +1,5 @@
 [tools]
-node = "24"
+node = "26"
 
 [settings.node]
 # Run `corepack enable` after installing Node so pnpm comes from the
